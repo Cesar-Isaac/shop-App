@@ -1,0 +1,102 @@
+class Rating {
+  final double rate;
+  final int count;
+
+  Rating({required this.rate, required this.count});
+
+  factory Rating.fromJson(Map<String, dynamic> json) {
+    return Rating(
+      rate: (json['rate'] as num).toDouble(),
+      count: json['count'] as int,
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'rate': rate,
+      'count': count,
+    };
+  }
+}
+
+class MainProduct {
+  final int id;
+  final String title;
+  final double price;
+  final String description;
+  final String category;
+  final String image;
+  final Rating rating;
+
+  MainProduct({
+    required this.id,
+    required this.title,
+    required this.price,
+    required this.description,
+    required this.category,
+    required this.image,
+    required this.rating,
+  });
+
+  factory MainProduct.fromJson(Map<String, dynamic> json) {
+    return MainProduct(
+      id: json['id'] as int,
+      title: json['title'] as String,
+      price: (json['price'] as num).toDouble(),
+      description: json['description'] as String,
+      category: json['category'] as String,
+      image: json['image'] as String,
+      rating: Rating.fromJson(json['rating'] as Map<String, dynamic>),
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'title': title,
+      'price': price,
+      'description': description,
+      'category': category,
+      'image': image,
+      'rating': rating.toJson(),
+    };
+  }
+
+  static List<MainProduct> listFromJson(List<dynamic> list) {
+    return list.map((json) => MainProduct.fromJson(json)).toList();
+  }
+}
+
+// class MainProduct {
+//   final int id;
+//   final String title;
+//   final double price;
+//   final String description;
+//   final String category;
+//   final String image;
+//
+//   MainProduct({
+//     required this.id,
+//     required this.title,
+//     required this.price,
+//     required this.description,
+//     required this.category,
+//     required this.image,
+//   });
+//
+//   factory MainProduct.fromJson(Map<String, dynamic> json) {
+//     return MainProduct(
+//       id: json['id'],
+//       title: json['title'],
+//       price: (json['price'] as num).toDouble(),
+//       description: json['description'],
+//       category: json['category'],
+//       image: json['image'],
+//     );
+//   }
+//
+//   static List<MainProduct> listFromJson(List<dynamic> jsonList) {
+//     return jsonList.map((e) => MainProduct.fromJson(e)).toList();
+//   }
+// }
+
