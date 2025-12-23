@@ -66,37 +66,3 @@ class MainProduct {
     return list.map((json) => MainProduct.fromJson(json)).toList();
   }
 }
-
-// class MainProduct {
-//   final int id;
-//   final String title;
-//   final double price;
-//   final String description;
-//   final String category;
-//   final String image;
-//
-//   MainProduct({
-//     required this.id,
-//     required this.title,
-//     required this.price,
-//     required this.description,
-//     required this.category,
-//     required this.image,
-//   });
-//
-//   factory MainProduct.fromJson(Map<String, dynamic> json) {
-//     return MainProduct(
-//       id: json['id'],
-//       title: json['title'],
-//       price: (json['price'] as num).toDouble(),
-//       description: json['description'],
-//       category: json['category'],
-//       image: json['image'],
-//     );
-//   }
-//
-//   static List<MainProduct> listFromJson(List<dynamic> jsonList) {
-//     return jsonList.map((e) => MainProduct.fromJson(e)).toList();
-//   }
-// }
-
