@@ -52,39 +52,6 @@ class RegisterController extends GetxController {
       appBuilder.setToken(token);
       Get.offAllNamed(Pages.home.value);
 
-      // final response = await APIService.instance.request(
-      //   Request(
-      //     endPoint: EndPoints.login,
-      //     method: RequestMethod.Post,
-      //     header: {"Content-Type": "application/json"},
-      //     body: {
-      //       "username": username.text.trim(),
-      //       "password": password.text.trim(),
-      //     },
-      //   ),
-      // );
-      // if (response.success) {
-      //   final token = response.data != null ? response.data['token'] : null;
-      //   if (token != null) {
-      //     appBuilder.setRole(Role.user);
-      //     appBuilder.setToken(token);
-
-      //     appBuilder.box.write("isLoggedIn", true);
-      //     appBuilder.box.write("token", token);
-
-      //     Get.offAllNamed(Pages.home.value);
-
-      //     debugPrint("token : $token");
-      //   } else {
-      //     Get.snackbar(
-      //       "Error",
-      //       "Token not found",
-      //       snackPosition: SnackPosition.TOP,
-      //       backgroundColor: StyleRepo.red,
-      //       colorText: StyleRepo.white,
-      //     );
-      //   }
-      // }
     } else {
       Get.snackbar(
         "Error",
