@@ -24,7 +24,7 @@ class Product {
   String description;
   String category;
   String image;
-  Rating? rating; // اضف هذا
+  Rating? rating; 
 
   Product({
     required this.id,
