@@ -16,7 +16,7 @@ class CartAppBar extends StatelessWidget {
           bottomRight: Radius.circular(15),
         ),
       ),
-      // height: MediaQuery.sizeOf(context).height * 0.1,
+      
       alignment: Alignment.center,
       child: Row(
         children: [
